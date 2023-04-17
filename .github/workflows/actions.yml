@@ -1,0 +1,24 @@
+name: OpenAPI Checks
+
+on:
+  - pull_request
+
+jobs:
+  build:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: generate.sh
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build with Maven
+        run: mvn --batch-mode package
+      - name: Archive JAR
+        uses: actions/upload-artifact@v3
+        with:
+          name: jar
+          path: target/*.jar
