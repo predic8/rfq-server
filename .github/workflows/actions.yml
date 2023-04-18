@@ -22,6 +22,12 @@ jobs:
         with:
           name: rfq-server.jar
           path: target/*.jar
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/predic8/rfq-server
+          flavor: latest=true
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login
@@ -35,3 +41,4 @@ jobs:
         with:
           context: .
           push: true
+          tags:
