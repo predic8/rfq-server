@@ -28,6 +28,10 @@ jobs:
         with:
           images: ghcr.io/predic8/rfq-server
           flavor: latest=true
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login
@@ -42,3 +46,9 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+      - run: echo "AZ ${{ secrets.AZURE_PASSWORD }}"
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_PASSWORD }}
+      - run: |
+          az webapp list --query "[?state=='Running']"
