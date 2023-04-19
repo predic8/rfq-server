@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * Quotation
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-17T15:53:45.968806+02:00[Europe/Berlin]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-19T21:16:00.790208+02:00[Europe/Berlin]")
 public class Quotation {
 
   @JsonProperty("id")

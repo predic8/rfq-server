@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-17T15:45:25.845928+02:00[Europe/Berlin]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-19T21:10:59.788409+02:00[Europe/Berlin]")
 @Controller
 @RequestMapping("${openapi.quotation.base-path:/v1}")
 public class RfqsApiController implements RfqsApi {
@@ -53,4 +53,6 @@ public class RfqsApiController implements RfqsApi {
             throw new RuntimeException(e);
         }
     }
+
+
 }
