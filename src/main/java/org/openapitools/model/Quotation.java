@@ -21,14 +21,14 @@ import javax.annotation.Generated;
  * Quotation
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-19T21:16:00.790208+02:00[Europe/Berlin]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-21T16:02:39.546653+02:00[Europe/Berlin]")
 public class Quotation {
 
   @JsonProperty("id")
   private UUID id;
 
-  @JsonProperty("product")
-  private String product;
+  @JsonProperty("article")
+  private String article;
 
   @JsonProperty("quantity")
   private Integer quantity;
@@ -96,23 +96,23 @@ public class Quotation {
     this.id = id;
   }
 
-  public Quotation product(String product) {
-    this.product = product;
+  public Quotation article(String article) {
+    this.article = article;
     return this;
   }
 
   /**
-   * Get product
-   * @return product
+   * Get article
+   * @return article
   */
   @Pattern(regexp = "(\\w+\\W*)*") @Size(max = 20) 
-  @Schema(name = "product", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public String getProduct() {
-    return product;
+  @Schema(name = "article", example = "Firecracker", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  public String getArticle() {
+    return article;
   }
 
-  public void setProduct(String product) {
-    this.product = product;
+  public void setArticle(String article) {
+    this.article = article;
   }
 
   public Quotation quantity(Integer quantity) {
@@ -147,7 +147,7 @@ public class Quotation {
    * @return price
   */
   @Valid @DecimalMin("0") 
-  @Schema(name = "price", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "price", example = "1.99", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public BigDecimal getPrice() {
     return price;
   }
@@ -204,7 +204,7 @@ public class Quotation {
     }
     Quotation quotation = (Quotation) o;
     return Objects.equals(this.id, quotation.id) &&
-        Objects.equals(this.product, quotation.product) &&
+        Objects.equals(this.article, quotation.article) &&
         Objects.equals(this.quantity, quotation.quantity) &&
         Objects.equals(this.price, quotation.price) &&
         Objects.equals(this.shipment, quotation.shipment) &&
@@ -213,7 +213,7 @@ public class Quotation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, product, quantity, price, shipment, mode);
+    return Objects.hash(id, article, quantity, price, shipment, mode);
   }
 
   @Override
@@ -221,7 +221,7 @@ public class Quotation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Quotation {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    product: ").append(toIndentedString(product)).append("\n");
+    sb.append("    article: ").append(toIndentedString(article)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    shipment: ").append(toIndentedString(shipment)).append("\n");
