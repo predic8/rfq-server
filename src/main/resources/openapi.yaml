@@ -6,7 +6,7 @@ info:
   title: Quotation API
   version: "1.0"
 servers:
-- url: https://api.server.test/v1
+- url: https://rfq-server.azurewebsites.net/v1
 tags:
 - name: Quote
 paths:
@@ -33,16 +33,17 @@ components:
     Quotation:
       example:
         mode: mode
-        product: product
         quantity: 80
         shipment: FOB
-        price: 0.6027456183070403
+        price: 1.99
         id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        article: Firecracker
       properties:
         id:
           format: uuid
           type: string
-        product:
+        article:
+          example: Firecracker
           maxLength: 20
           pattern: (\w+\W*)*
           type: string
@@ -52,6 +53,7 @@ components:
           minimum: 0
           type: integer
         price:
+          example: 1.99
           minimum: 0
           type: number
         shipment:

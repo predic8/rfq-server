@@ -21,13 +21,12 @@ import org.springframework.web.context.request.NativeWebRequest;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-import java.net.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-19T21:10:59.788409+02:00[Europe/Berlin]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-25T15:26:51.189516+01:00[Europe/London]")
 @Controller
 @RequestMapping("${openapi.quotation.base-path:/v1}")
 public class RfqsApiController implements RfqsApi {
@@ -45,14 +44,8 @@ public class RfqsApiController implements RfqsApi {
     }
 
     @Override
-    public ResponseEntity<Void> getQuote(Quotation quotation)  {
+    public ResponseEntity<Void> getQuote(Quotation quotation) {
         System.out.println("quotation = " + quotation);
-        try {
-            return ResponseEntity.created(new URI("/rfqs/45324")).build();
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+        return ResponseEntity.ok().build();
     }
-
-
 }
