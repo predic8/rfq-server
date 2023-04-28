@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-25T15:34:02.427687+01:00[Europe/London]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-28T12:07:40.797392+02:00[Europe/Berlin]")
 @Validated
 @Tag(name = "Quote", description = "the Quote API")
 public interface RfqsApi {
