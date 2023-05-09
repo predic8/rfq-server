@@ -1,2 +1,8 @@
 README.md
 pom.xml
+org.openapitools.OpenApiGeneratorApplication
+
+
+**/OpenApiGeneratorApplicationTests.java
+**/OpenApiGeneratorApplication.java
+**/RfqsApiController.java

@@ -19,15 +19,6 @@
         <version>2.7.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -77,4 +68,55 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>wagon-maven-plugin</artifactId>
+                <version>2.0.2</version>
+                <executions>
+                    <execution>
+                        <id>download-openapi</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <url>https://raw.githubusercontent.com</url>
+                    <fromFile>predic8/rfq-api/main/rfq-api-v1.oas.yml</fromFile>
+                    <toDir>src/main/resources</toDir>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>6.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>src/main/resources/rfq-api-v1.oas.yml</inputSpec>
+                            <generatorName>spring</generatorName>
+                            <ignoreFileOverride>${basedir}/.openapi-generator-ignore</ignoreFileOverride>
+                            <configOptions>
+                                <sourceFolder>src/generated/java/main</sourceFolder>
+                                <cleanupOutput>true</cleanupOutput>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
