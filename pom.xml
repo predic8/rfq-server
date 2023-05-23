@@ -90,8 +90,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <url>https://raw.githubusercontent.com</url>
-                    <fromFile>predic8/rfq-api/main/rfq-api-v1.oas.yml</fromFile>
+                    <url>https://github.com</url>
+                    <fromFile>predic8/rfq-api/releases/latest/download/rfq-api-v1.oas.yml</fromFile>
                     <toDir>src/main/resources</toDir>
                 </configuration>
             </plugin>
