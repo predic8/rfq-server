@@ -108,10 +108,6 @@
                             <inputSpec>src/main/resources/rfq-api-v1.oas.yml</inputSpec>
                             <generatorName>spring</generatorName>
                             <ignoreFileOverride>${basedir}/.openapi-generator-ignore</ignoreFileOverride>
-                            <configOptions>
-                                <sourceFolder>src/generated/java/main</sourceFolder>
-                                <cleanupOutput>true</cleanupOutput>
-                            </configOptions>
                         </configuration>
                     </execution>
                 </executions>
