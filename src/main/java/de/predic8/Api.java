@@ -28,10 +28,4 @@ public class Api implements RfqsApi {
         return Optional.ofNullable(request);
     }
 
-    @Override
-    public ResponseEntity<Void> creatQuote(Quotation quotation) {
-        quotation.setId(UUID.randomUUID());
-        System.out.println("quotation = " + quotation);
-        return ResponseEntity.ok().build();
-    }
 }
