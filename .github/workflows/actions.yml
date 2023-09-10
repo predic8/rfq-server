@@ -37,5 +37,5 @@ jobs:
         with:
           app-name: 'rfq-server'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7EE7C9AF968D4F45B1632C26ACEEB14E }}
+          publish-profile: ${{ secrets.AZ_PUBLISH_PROFILE }}
           package: '*.jar'
