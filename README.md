@@ -21,6 +21,10 @@ az webapp create --name rfq-server \
    Name: AZ_PUBLISH_PROFILE
    Content: << Einfügen >>
 
+# Setup Intellij
+
+1. target/generated-sources/openapi/src/main/java als source path hinzufügen 
+
 
 
 # Reference

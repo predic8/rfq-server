@@ -1,0 +1,44 @@
+openapi: '3.0.2'
+info:
+  title: Quotation API
+  version: '1.2.0'
+  contact:
+    email: bayer@predic8.de
+  description: The API for Quotation
+servers:
+  - url: https://api.predic8.de/logistics
+
+paths:
+  /rfqs:
+    post:
+      operationId: requestQuote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Quotation"
+
+      responses:
+        '200':
+          description: OK
+
+components:
+  schemas:
+    Quotation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        product:
+          type: string
+          maxLength: 20
+          pattern: '(\w+\W*)*'
+        quantity:
+          type: integer
+          format: int32
+          minimum: 0
+          maximum: 1000
+        price:
+          type: number
+          minimum: 0

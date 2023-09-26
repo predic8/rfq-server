@@ -28,4 +28,9 @@ public class Api implements RfqsApi {
         return Optional.ofNullable(request);
     }
 
+    @Override
+    public ResponseEntity<Void> requestQuote(Quotation quotation) {
+        System.out.println("quotation = " + quotation);
+        return ResponseEntity.ok().build();
+    }
 }
