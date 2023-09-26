@@ -13,7 +13,7 @@ import java.net.*;
 import java.util.*;
 
 @Controller
-@RequestMapping("${openapi.quotation.base-path:/v1}")
+@RequestMapping("${openapi.quotation.base-path:/logistics}")
 public class Api implements RfqsApi {
 
     private final NativeWebRequest request;
