@@ -26,6 +26,10 @@ az webapp create --name rfq-server \
 1. target/generated-sources/openapi/src/main/java als source path hinzufügen 
 
 
+# Troubleshooting
+
+- Check Javascript Console in Swagger UI
+
 
 # Reference
 
